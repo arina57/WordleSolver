@@ -82,7 +82,8 @@ namespace WordleSovlerLibrary
         public List<string> SuggestGuess()
         {
             validWords = FindValidWords(validWords);
-            return RankWordsByLetterPosition(validWords).OrderByDescending(score => score.Value).Select(word => word.Key).Take(10).ToList(); 
+            var wordsWithoutTwoOfSameLetter = RankWordsByLetterPosition(validWords).Where(word => word.Key.All(letter => word.Key.Count(l => l == letter) == 1));
+            return wordsWithoutTwoOfSameLetter.OrderByDescending(score => score.Value).Select(word => word.Key).Take(10).ToList(); 
         }
       }
 }

@@ -1,8 +1,5 @@
 ﻿using Result = WordleSovlerLibrary.Enums.Result;
 
-// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-
 
 WordleSovlerLibrary.WordAnalyzer wordAnalyzer = new WordleSovlerLibrary.WordAnalyzer();
 while(true)
